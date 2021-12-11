@@ -6,6 +6,6 @@ WORKDIR ova-server
 RUN make setup-tensorflow-lite
 ENV PATH="/ova-server/.venv/bin:$PATH"
 RUN ./cli.py download --model=yolov4 --framework=tensorflow_lite --hardware=cpu
-RUN make run
+CMD make run
 
 EXPOSE 8000
