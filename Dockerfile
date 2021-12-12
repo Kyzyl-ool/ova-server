@@ -1,5 +1,5 @@
 FROM python:3.7.12
-RUN git clone https://github.com/openvisionapi/ova-server.git
+RUN git clone --branch docker/setup-tensorflow-lite https://github.com/Kyzyl-ool/ova-server.git
 
 WORKDIR ova-server
 RUN git checkout -b docker/setup-tensorflow-lite
