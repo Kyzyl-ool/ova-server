@@ -1,3 +1,4 @@
+from flask_cors import CORS
 from flask import Flask
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
@@ -10,6 +11,7 @@ limiter = Limiter(key_func=get_remote_address)
 
 def init_api() -> Flask:
     server = Flask(__name__)
+    CORS(server)
     server.config.from_object(config)
 
     inference.init()
